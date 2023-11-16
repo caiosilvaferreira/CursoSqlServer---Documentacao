@@ -1,5 +1,39 @@
 # SQL server
 
+# PRIMEIRAMENTE BAIXAMOS O PACOTE NUGET PARA O DOTNET
+
+![Untitled](SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled.png)
+
+```csharp
+dotnet add package microsoft.data.sqlclient
+```
+
+---
+
+OBSERVAÇÃO: antes de tentar a conexão seguir o passo a passo desse artigo [https://balta.io/blog/sql-server-docker](https://balta.io/blog/sql-server-docker)
+
+[https://github.com/balta-io/2805/blob/master/balta.zip](https://github.com/balta-io/2805/blob/master/balta.zip)  = baixe esta pasta para criar um banco basico e com admin pack vc consegue repassar todo o codigo para azure data studio
+
+![Untitled](SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled%201.png)
+
+![Untitled](SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled%202.png)
+
+1q2w3e4r@#$
+
+![Untitled](SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled%203.png)
+
+---
+
+# STRING DE CONEXÃO
+
+![Untitled](SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled%204.png)
+
+esse codigo para conexão no banco de dados gerava um erro na certificação nao confiavel tive que incluir mais um pedaço de codigo igual abaixo. Adicionei a mais “TrustServerCertificate=True”, depois ele conectou no banco
+
+![Untitled](SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled%205.png)
+
+---
+
 # Criando database
 
 ```jsx
@@ -388,7 +422,7 @@ DELETE FROM [Categoria]
 
 DEU ERRO PARA EXCLUIR ESSA CATEGORIA PORQUE ELA É UMA CHAVE ESTRANGEIRA E VINCULADA A OUTRO BANCO, COMO ESTAMOS SELECIONANDO O ID ELE É UMA CHAVE ESTRANGEIRA, SE TENTAMOS PELO CURSO AI CONSEGUIMOS APAGAR OS DADOS
 
-![SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled.png](SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled.png)
+![SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled%206.png](SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled%206.png)
 
 AI NESSE CASO TIVEMOS QUE EXCLUIR PRIMEIRO AS INFORMAÇÕES DO BANCO PRINCIPAL E DEPOIS DO SEGUNDO BANCO
 
@@ -797,7 +831,7 @@ FROM [Career]
 
 RESULTADO
 
-![Untitled](SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled%201.png)
+![Untitled](SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled%207.png)
 
 REFATORANDO O SELECT 
 
@@ -819,7 +853,7 @@ GROUP BY [Career].[Id],
 
 RESULTADO
 
-![Untitled](SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled%202.png)
+![Untitled](SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled%208.png)
 
 CRIANDO VIEW DESSE CODIGO
 
@@ -850,7 +884,7 @@ FROM [vwCareers]
 
 RESULTADO
 
-![Untitled](SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled%203.png)
+![Untitled](SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled%209.png)
 
 INSERINDO DADOS  NO BANCO
 
@@ -882,7 +916,7 @@ INSERT INTO
 
 RESULTADO 
 
-![Untitled](SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled%204.png)
+![Untitled](SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled%2010.png)
 
 ---
 
@@ -982,7 +1016,7 @@ DELETE FROM [Student] WHERE [Id]='09ce0b7b-cfca-497b-92c0-3290ad9d5142'
 
 GEROU ESTE ERRO PORQUE TEM VARIAS INFORMAÇÕES VINCULADAS A ESTE BANCO , ENTÃO DEVEMOS EXCLUIR OS REGISTROS VINCULADOS A ESSA INFORMAÇÃO PARA DEPOIS EXCLUIMOS A CONTA DO ALUNO
 
-![SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled%205.png](SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled%205.png)
+![SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled%2011.png](SQL%20server%202422fdac54f244bb940f6d8911566525/Untitled%2011.png)
 
 PRIMEIRO FIZEMOS O SELECT PARA EXCLUSÃO DE DADOS, CRIAMOS UMA PROCEDURE, DEPOIS DE DECLARAMOS O STUDENTID.
 
